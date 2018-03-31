@@ -35,7 +35,7 @@ def webhook():
     r = json.dumps(res, indent=4)
     # print(res)
     r.headers['Content-Type'] = 'application/json'
-    return r
+    return "<h1>Hello heroku</h1>"
  
  
 def processRequest(req):
