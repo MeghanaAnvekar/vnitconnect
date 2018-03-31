@@ -37,4 +37,5 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
  
- 
+ if __name__ == '__main__':
+    app.run()
