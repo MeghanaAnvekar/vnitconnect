@@ -19,7 +19,6 @@ pycparser==2.18
 pyOpenSSL==17.5.0
 requests==2.18.4
 six==1.11.0
-unity-lens-photos==1.0
 urllib3==1.22
 virtualenv==15.2.0
 virtualenv-clone==0.3.0
