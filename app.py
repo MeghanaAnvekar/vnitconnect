@@ -13,16 +13,13 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def webhook_dialogflow():
 	data = request.get_json()
- 
-    	question = data['result']['resolvedQuery']
- 	answer = fetch_data(question)
- 	
+	question = data['result']['resolvedQuery']
+	answer = fetch_data(question)
 	res = {
 	"speech": answer,
 	"displayText":answer,
 	"source": "webhookdata"
 	}
-	
 	return jsonify(res)
 	
 	
