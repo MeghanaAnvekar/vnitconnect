@@ -17,10 +17,10 @@ def webhook():
     	print("Request:")
     	print(json.dumps(req, indent=4))
 
-	
+	xyz = str(json.dumps(req, indent=4))
 	res = {
 	"speech": "webhook working",
-	"displayText": "webhook working",
+	"displayText": xyz,
 	"source": "webhookdata"
 	}
 	r = json.dumps(res)
