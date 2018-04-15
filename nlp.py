@@ -55,7 +55,7 @@ def is_match(a, b, threshold=0.5):
     lemmae_b = lemmatize(b)
     # Calculate Jaccard similarity
     ratio = len(set(lemmae_a).intersection(lemmae_b)) / float(len(set(lemmae_a).union(lemmae_b)))
-    return (ratio >= threshold)
+    return (ratio)
 
 
 if __name__ == '__main__':
