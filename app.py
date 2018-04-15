@@ -21,7 +21,7 @@ def webhook():
 	xyz = str(json.dumps(req, indent=4))
 	res = {
 	"speech": "webhook working",
-	"displayText": xyz,
+	"displayText": "webhook ",
 	"source": "webhookdata"
 	}
 	r = json.dumps(res)
