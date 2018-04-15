@@ -11,9 +11,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def webhook():
-
+	answer = "la la land "
 	req = request.get_json(silent=True, force=True)
- 
+ 	#question = req.get('result').get('resolvedQuery') 
+ 	#answer = fetch_data(question)
     	print("Request:")
     	print(json.dumps(req, indent=4))
 
