@@ -1,9 +1,0 @@
-wordnet
-stopwords
-punkt
-hmm_treebank_pos_tagger
-maxent_treebank_pos_tagger
-universal_tagset
-punkt
-snowball_data
-averaged_perceptron_tagger

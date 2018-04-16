@@ -1,6 +1,7 @@
 # Imports
+
+nltk.data.path.append('./nltk_data/')
 import nltk
-#nltk.data.path.append('./nltk_data/')
 import nltk.corpus
 import nltk.tokenize.punkt
 import nltk.stem.snowball
