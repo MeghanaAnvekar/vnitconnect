@@ -32,12 +32,12 @@ def fetch_data(q):
 	qid = 0
 	threshold = 0
 	for doc in docs:
-		w = Question.from_dict(doc.to_dict())
-		match_percent = is_match(w.question,q)
+		w = doc.to_dict()
+		match_percent = is_match(w.[u'question'],q)
 		if match_percent > threshold :
-			qid = w.qid
+			qid = w.[u'qid']
 			threshold = match_percent
-			print(str(qid)+" "+w.question)
+			print(str(qid)+" "+w.[u'question'])
 	final_ans = "Sorry I don't know the answer"
 	upvotes = 0
 	if qid != 0 and threshold >= 0.5 :
