@@ -27,7 +27,7 @@ def fetch_data(q):
 			    		break
 	u1 = category#.decode('utf-8')
 	
-	docs = db.collection(u'questions').where(u'category', u'==',u1).get()
+	docs = db.collection('questions').where('category', '==',u1).get()
 	
 	qid = 0
 	threshold = 0
