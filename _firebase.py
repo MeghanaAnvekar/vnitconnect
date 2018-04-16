@@ -23,7 +23,7 @@ def fetch_data(q):
 			    		category = x
 			    		print("match =>"+category)
 			    		break
-	u1 = category#.decode('utf-8')
+	u1 = category.decode('utf-8')
 	
 	docs = db.collection(u'questions').where(u'category', u'==',u1).get()
 	
@@ -65,7 +65,7 @@ def fetch_questions(q):
 			    		category = x
 			    		print("match =>"+category)
 			    		break
-	u1 = category#.decode('utf-8')
+	u1 = category.decode('utf-8')
 	
 	docs = db.collection(u'questions').where(u'category', u'==',u1).get()
 	
