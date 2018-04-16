@@ -4,12 +4,13 @@ from firebase_admin import firestore
 from nlp import categories, is_match, lemmatize
 from question import Question
 import os
+import sys
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'vnit-connect-firebase-adminsdk-2g8bd-ac564092f3.json'
 cred = credentials.Certificate('vnit-connect-firebase-adminsdk-2g8bd-ac564092f3.json')
 firebase_admin.initialize_app(cred)
 db = firestore.Client()
-
+print(sys.version)
 
 def fetch_data(q):
 	lemmae_q = lemmatize(q)
