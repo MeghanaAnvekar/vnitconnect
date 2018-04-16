@@ -15,6 +15,7 @@ def fetch_data(q):
 	lemmae_q = lemmatize(q)
 	print(lemmae_q)
 	category = 'misc'
+	print(type(category))
 	
 	for x in categories:
 		for y in categories[x]:
