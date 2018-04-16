@@ -45,9 +45,10 @@ def fetch_data(q):
 	
 		for doc in ans_docs:
 			ans = doc.to_dict()
-			if upvotes < ans[u'upvotes']:
-				upvotes = ans[u'upvotes']
-				final_ans = ans[u'answer']
+			if ans[u'qid'] == qid:
+				if upvotes < ans[u'upvotes']:
+					upvotes = ans[u'upvotes']
+					final_ans = ans[u'answer']
 				
 		
 
