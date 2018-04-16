@@ -1,5 +1,6 @@
 wordnet
 stopwords
+punkt
 pros_cons
 reuters
 hmm_treebank_pos_tagger
