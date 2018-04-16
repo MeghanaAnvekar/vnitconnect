@@ -7,5 +7,3 @@ universal_tagset
 punkt
 snowball_data
 averaged_perceptron_tagger
-hmm_treebank_pos_tagger
-

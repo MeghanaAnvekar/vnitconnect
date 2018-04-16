@@ -27,7 +27,7 @@ categories = {
 }
 
 # Create tokenizer and stemmer
-tokenizer = nltk.tokenize
+#tokenizer = nltk.tokenize
 lemmatizer = nltk.stem.wordnet.WordNetLemmatizer()
 
 
