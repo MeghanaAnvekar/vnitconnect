@@ -66,6 +66,7 @@ def fetch_questions(q):
 			    		print("match =>"+category)
 			    		break
 	u1 = category#.decode('utf-8')
+	print(type(u1))
 	
 	docs = db.collection(u'questions').where(u'category', u'==',u1).get()
 	
