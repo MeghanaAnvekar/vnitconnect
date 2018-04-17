@@ -27,9 +27,9 @@ def fetch_data(q):
 			for z in lemmae_q:
 				print(z)
 				if z == y:
-		    			category = x
-		    			print("match =>"+category)
-		    			break
+	    			category = x
+	    			print("match =>"+category)
+	    			break
 		    	else:
 		    		print('not a match')
 	print("888888888888888888"+category)
