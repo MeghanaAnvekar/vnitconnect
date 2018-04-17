@@ -25,6 +25,7 @@ def fetch_data(q):
 			    		category = x
 			    		print("match =>"+category)
 			    		break
+	print(category)
 	u1 = category#.decode('utf-8')
 	
 	docs = db.collection('questions').get()#where('category', '==',u1).get()
