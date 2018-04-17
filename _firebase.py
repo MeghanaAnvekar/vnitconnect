@@ -17,24 +17,24 @@ def fetch_data(q):
 	print(lemmae_q)
 	category = 'misc'
 	print(type(category))
-	
+
 	for x in categories:
-		print("------------------------")
+		print(x+" ------------------------")
 		for y in categories[x]:
-			print(y)
+			print("---- "+y)
 			for z in lemmae_q:
-				print(z)	
+				print(z)
 				if z == y :
-			    		category = x
-			    		print("match =>"+category)
-			    		break
-			    	else:
-			    		print('not a match')
+		    		category = x
+		    		print("match =>"+category)
+		    		break
+		    	else:
+		    		print('not a match')
 	print("888888888888888888"+category)
 	u1 = category#.decode('utf-8')
-	
+
 	docs = db.collection('questions').where('category', '==',u1).get()
-	
+
 	qid = 0
 	threshold = 0
 	for doc in docs:
@@ -47,16 +47,16 @@ def fetch_data(q):
 	final_ans = "Sorry I don't know the answer"
 	upvotes = 0
 	if qid != 0 and threshold >= 0.5 :
-		ans_docs = db.collection(u'answers').where(u'qid', u'==',qid).get() 
-	
+		ans_docs = db.collection(u'answers').where(u'qid', u'==',qid).get()
+
 		for doc in ans_docs:
 			ans = doc.to_dict()
 			if ans[u'qid'] == qid:
 				if upvotes < ans[u'upvotes']:
 					upvotes = ans[u'upvotes']
 					final_ans = ans[u'answer']
-				
-		
+
+
 
 
 	return (final_ans)
@@ -66,20 +66,20 @@ def fetch_questions(q):
 	lemmae_q = lemmatize(q)
 	print(lemmae_q)
 	category = 'misc'
-	
+
 	for x in categories:
 		for y in categories[x]:
-			for z in lemmae_q:	
+			for z in lemmae_q:
 				if z == y:
-			    		category = x
-			    		print("match =>"+category)
-			    		break
-			    	
+		    		category = x
+		    		print("match =>"+category)
+		    		break
+
 	u1 = category#.decode('utf-8')
 	print(type(u1))
-	
+
 	docs = db.collection(u'questions').where(u'category', u'==',u1).get()
-	
+
 	qid = []
 	threshold = 0.4
 	for doc in docs:
@@ -87,7 +87,7 @@ def fetch_questions(q):
 		match_percent = is_match(w.question,q)
 		if match_percent >= threshold :
 			qid.append(w.qid)
-			
+
 	print(qid)
 	return qid
 
@@ -96,4 +96,3 @@ if __name__ == '__main__':
     fetch_data('When is the first sessional?')
     #fetch_questions('Where is VNIT?')
     fetch_questions('When is the first sessional?')
-    
