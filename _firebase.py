@@ -28,6 +28,8 @@ def fetch_data(q):
 			    		category = x
 			    		print("match =>"+category)
 			    		break
+			    	else:
+			    		print('not a match')
 	print("888888888888888888"+category)
 	u1 = category#.decode('utf-8')
 	
@@ -72,6 +74,7 @@ def fetch_questions(q):
 			    		category = x
 			    		print("match =>"+category)
 			    		break
+			    	
 	u1 = category#.decode('utf-8')
 	print(type(u1))
 	
