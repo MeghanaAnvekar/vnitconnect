@@ -15,25 +15,28 @@ print(sys.version)
 def fetch_data(q):
 	print(q)
 	lemmae_q = []
+	print("1st call to lemmatize from fetch_data------------------")
+
 	lemmae_q = lemmatize(q)
+	print("------------------------------------")
 	print(lemmae_q)
 	category = 'misc'
 	print(type(category))
-
+	flag = False
 	for x in categories:
-		print(x+" ------------------------")
 		for y in categories[x]:
-			print("---- "+y)
+			#print("---- "+y)
 			for z in lemmae_q:
-				print(z)
 				if z == y:
-	    			category = x
-	    			print("match =>"+category)
-	    			break
-		    	else:
-		    		print('not a match')
+		    			category = x
+		    			print("match =>"+category)
+		    			flag = True
+				if flag == True:
+					break
+		if flag == True:
+			break
 	print("888888888888888888"+category)
-	u1 = category.decode('utf-8')
+	u1 = category#.decode('utf-8')
 
 	docs = db.collection('questions').where('category', '==',u1).get()
 
@@ -48,7 +51,8 @@ def fetch_data(q):
 			print(str(qid)+" "+w[u'question'])
 	final_ans = "Sorry I don't know the answer"
 	upvotes = 0
-	if qid != 0 and threshold >= 0.5 :
+	print(threshold)
+	if qid != 0 and threshold >= 0.4 :
 		ans_docs = db.collection(u'answers').where(u'qid', u'==',qid).get()
 
 		for doc in ans_docs:
@@ -91,7 +95,7 @@ def fetch_questions(q):
 			qid.append(w.qid)
 
 	print(qid)
-	return qid
+	return (qid)
 
 
 if __name__ == '__main__':
