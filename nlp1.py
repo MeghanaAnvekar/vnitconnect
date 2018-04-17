@@ -1,8 +1,6 @@
 # Imports
-#NLTK_DATAimport nltk
-
-# Imports
 import nltk
+nltk.data.path.append('./nltk_data/')
 import nltk.corpus
 import nltk.tokenize.punkt
 import nltk.stem.snowball
@@ -47,10 +45,16 @@ def get_wordnet_pos(pos_tag):
 
 def lemmatize(a):
     a_tagged = nltk.word_tokenize(a)
+    print("a_tagged = ")
+    print(a_tagged)
+
     pos_a = map(get_wordnet_pos, nltk.pos_tag(a_tagged))
+    print("printing pos_a")
+    print(pos_a)
     lemmae_a = [lemmatizer.lemmatize(token.lower().strip(string.punctuation), pos) for token, pos in pos_a \
                     if pos == wordnet.NOUN and token.lower().strip(string.punctuation) not in stopwords]
     print(lemmae_a)
+    print("leaving nlp")
     return lemmae_a
 
 def is_match(a, b, threshold=0.5):

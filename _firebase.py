@@ -13,6 +13,8 @@ db = firestore.Client()
 print(sys.version)
 
 def fetch_data(q):
+	print(q)
+	lemmae_q = []
 	lemmae_q = lemmatize(q)
 	print(lemmae_q)
 	category = 'misc'
@@ -24,14 +26,14 @@ def fetch_data(q):
 			print("---- "+y)
 			for z in lemmae_q:
 				print(z)
-				if z == y :
-		    		category = x
-		    		print("match =>"+category)
-		    		break
+				if z == y:
+		    			category = x
+		    			print("match =>"+category)
+		    			break
 		    	else:
 		    		print('not a match')
 	print("888888888888888888"+category)
-	u1 = category#.decode('utf-8')
+	u1 = category.decode('utf-8')
 
 	docs = db.collection('questions').where('category', '==',u1).get()
 
@@ -71,9 +73,9 @@ def fetch_questions(q):
 		for y in categories[x]:
 			for z in lemmae_q:
 				if z == y:
-		    		category = x
-		    		print("match =>"+category)
-		    		break
+			    		category = x
+			    		print("match =>"+category)
+			    		break
 
 	u1 = category#.decode('utf-8')
 	print(type(u1))

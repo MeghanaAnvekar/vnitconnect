@@ -21,8 +21,8 @@ def webhook_dialogflow():
 	"source": "webhookdata"
 	}
 	return jsonify(res)
-	
-	
+
+
 @app.route('/questions', methods=['POST'])
 def webhook_android_app():
 	data = request.get_json()
@@ -31,7 +31,7 @@ def webhook_android_app():
 	res = {
 	"question_list": question_list
 	}
-	return jsonify(res) 
+	return jsonify(res)
 
 if __name__ == '__main__' :
     app.run(debug='true')
