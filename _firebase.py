@@ -86,16 +86,23 @@ def fetch_questions(q):
 
 	docs = db.collection(u'questions').where(u'category', u'==',u1).get()
 
-	qid = []
+	questions = []
 	threshold = 0.4
 	for doc in docs:
-		w = Question.from_dict(doc.to_dict())
-		match_percent = is_match(w.question,q)
+		w = doc.to_dict()
+		match_percent = is_match(w[u'question'],q)
 		if match_percent >= threshold :
-			qid.append(w.qid)
+			temp = {
+			'qid':w[u'qid'],
+			'user':w[u'user'],
+			'timestamp':w[u'timestamp'],
+			'category':w[u'category'],
+			'question':w[u'question']
+			}
+			questions.append(temp)
 
-	print(qid)
-	return (qid)
+	print(questions)
+	return (questions)
 
 def fetch_category(q):
 	lemmae_q = lemmatize(q)
