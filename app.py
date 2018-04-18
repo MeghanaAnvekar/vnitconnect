@@ -3,7 +3,7 @@ import os
 from flask import  request
 from flask import Flask
 from flask import jsonify
-from _firebase import fetch_data, fetch_questions
+from _firebase import fetch_data, fetch_questions, fetch_category
 
 
 
