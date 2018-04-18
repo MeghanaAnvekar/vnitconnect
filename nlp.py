@@ -13,14 +13,14 @@ import os
 #categories
 categories = {
 'hostel':['hostel','girls hostel','boys hostel'],
-'events':['aarohi','axis','consortium','conso','ig','js','junior scientist','institute gathering','dg','department gathering','dept gathering'],
+'events':['aarohi','axis','consortium','conso','ig','js','junior scientist','institute gathering','dg','department gathering','dept gathering','cultural events'],
 'contact':['email','mobile','mobile no','phone','address'],
-'placements':['day one companies','recruiters','amazon','morgan stanley','goldman sacchs','internships','intern','package','placed'],
+'placements':['day one companies','recruiters','amazon','morgan stanley','goldman sacchs','internships','intern','package','placed','placements'],
 'registration':['course registration'],
 'library':['library'],
-'career':['mtech','gre','GATE','gate exam','cat exam','CAT','iim','iit'],
-'projects':['project','research'],
-'clubs':['ecell','e-cell','octaves','grooves','prayaas','mag.com','astronomy','ivlabs','tesla','club capture','iridiscence','halla bol'],
+'career':['mtech','gre','GATE','gate exam','cat exam','CAT','iim','iit','career'],
+'projects':['project','research','projects'],
+'clubs':['ecell','e-cell','octaves','grooves','prayaas','mag.com','astronomy','ivlabs','tesla','club capture','iridiscence','halla bol','clubs'],
 'academics':['study','toc','lp','dspd','compilers','os','operating systems','sessional','end sem','time table','credits'],
 }
 
