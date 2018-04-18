@@ -34,5 +34,14 @@ def webhook_android_app():
 	}
 	return jsonify(res)
 
+@app.route('/category', methods=['POST'])
+def webhook_android_app_category():
+	data = request.get_json()
+	question = data['question']
+	category = fetch_category(question)
+	res = {
+	"category": category
+	}
+	return jsonify(res)
 if __name__ == '__main__' :
     app.run(debug='true')

@@ -97,6 +97,20 @@ def fetch_questions(q):
 	print(qid)
 	return (qid)
 
+def fetch_category(q):
+	lemmae_q = lemmatize(q)
+	print(lemmae_q)
+	category = 'misc'
+
+	for x in categories:
+		for y in categories[x]:
+			for z in lemmae_q:
+				if z == y:
+			    		category = x
+			    		print("match =>"+category)
+			    		break
+
+	return category
 
 if __name__ == '__main__':
     fetch_data('When is the first sessional?')
