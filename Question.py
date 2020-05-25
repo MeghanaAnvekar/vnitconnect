@@ -28,5 +28,5 @@ class Question(object):
         return d
 
     def __repr__(self):
-        return u'City(question={})'.format(
+        return u'Question (question={})'.format(
             self.qid, self.question, self.timestamp, self.tags,self.user)
