@@ -14,11 +14,8 @@ print(sys.version)
 
 def fetch_data(q):
 	print(q)
-	lemmae_q = []
-	print("1st call to lemmatize from fetch_data------------------")
-
 	lemmae_q = lemmatize(q)
-	print("------------------------------------")
+	
 	print(lemmae_q)
 	category = 'misc'
 	print(type(category))
@@ -35,7 +32,7 @@ def fetch_data(q):
 					break
 		if flag == True:
 			break
-	print("888888888888888888"+category)
+	print(category)
 	u1 = category#.decode('utf-8')
 
 	docs = db.collection('questions').where('category', '==',u1).get()
